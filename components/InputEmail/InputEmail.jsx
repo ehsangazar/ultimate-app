@@ -6,6 +6,7 @@ const InputEmail = ({ placeholder }) => (
   <div
     css={css`
       width: 100%;
+      direction: ltr;
     `}
   >
     <Input type="email" placeholder={placeholder} />

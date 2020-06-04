@@ -2,7 +2,8 @@
 import { css, jsx } from '@emotion/core'
 import Head from 'next/head'
 import LayoutAuth from '../containers/LayoutAuth/LayoutAuth'
-import { InputEmail, InputPassword, Button } from '../components'
+import FormControl from '../containers/FormControl/FormControl'
+import { InputEmail, InputPassword, Button, H2, Space } from '../components'
 
 export default function Home() {
   const handleSubmit = (event) => {
@@ -16,11 +17,19 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <LayoutAuth>
+        <Space />
+        <H2 align="center">به ریموت جابب خوش آمدید</H2>
         <>
           <form onSubmit={handleSubmit}>
-            <InputEmail placeholder="ایمیل" />
-            <InputPassword placeholder="کلمه عبور" />
-            <Button type="submit">ارسال</Button>
+            <FormControl>
+              <InputEmail placeholder="ایمیل" />
+            </FormControl>
+            <FormControl>
+              <InputPassword placeholder="کلمه عبور" />
+            </FormControl>
+            <FormControl>
+              <Button type="submit">وارد شوید</Button>
+            </FormControl>
           </form>
         </>
       </LayoutAuth>

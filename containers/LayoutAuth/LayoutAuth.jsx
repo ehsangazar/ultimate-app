@@ -6,21 +6,32 @@ const LayoutAuth = ({ children }) => (
     css={css`
       display: flex;
       height: 100vh;
+      max-width: 320px;
+      margin: 0 auto;
       align-items: center;
       justify-content: center;
       flex-direction: column;
     `}
   >
-    <div>
+    <div
+      css={css`
+        text-align: center;
+      `}
+    >
       <img
         css={css`
-          width: 300px;
+          max-width: 320px;
         `}
         src="logo.png"
       />
-      <h2>Ultimate Project</h2>
     </div>
-    <div>{children}</div>
+    <div
+      css={css`
+        width: 100%;
+      `}
+    >
+      {children}
+    </div>
   </div>
 )
 
