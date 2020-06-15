@@ -1,9 +1,11 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
+import { useSelector } from 'react-redux'
 import { H3, Hyperlink, Button, Paragraph, Small } from '../../components'
 
 const LayoutPage = ({ children }) => {
+  const auth = useSelector((state) => state.auth)
   const theme = useTheme()
   return (
     <div
@@ -64,37 +66,40 @@ const LayoutPage = ({ children }) => {
               align-items: center;
             `}
           >
-            <ul
-              css={css`
-                display: flex;
-                li {
-                  padding: 0 16px;
+            {(!auth || !auth.logged) && (
+              <ul
+                css={css`
                   display: flex;
-                  align-items: center;
-                }
-              `}
-            >
-              <li>
-                <Hyperlink
-                  css={css`
-                    border: none;
-                  `}
-                  href="/login"
-                >
-                  ورود
-                </Hyperlink>
-              </li>
-              <li>
-                <Hyperlink
-                  css={css`
-                    border: none;
-                  `}
-                  href="/register"
-                >
-                  <Button href="/register">ثبت نام</Button>
-                </Hyperlink>
-              </li>
-            </ul>
+                  li {
+                    padding: 0 16px;
+                    display: flex;
+                    align-items: center;
+                  }
+                `}
+              >
+                <li>
+                  <Hyperlink
+                    css={css`
+                      border: none;
+                    `}
+                    href="/login"
+                  >
+                    ورود
+                  </Hyperlink>
+                </li>
+                <li>
+                  <Hyperlink
+                    css={css`
+                      border: none;
+                    `}
+                    href="/register"
+                  >
+                    <Button href="/register">ثبت نام</Button>
+                  </Hyperlink>
+                </li>
+              </ul>
+            )}
+            {auth && auth.logged && <div>خوش آمدید</div>}
           </div>
         </div>
       </div>
