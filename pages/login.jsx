@@ -3,8 +3,9 @@ import { useState } from 'react'
 import { css, jsx } from '@emotion/core'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useDispatch } from 'react-redux'
-import actionTypes from '../configs/actionTypes'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { LOGIN_ACTION } from '../actions'
 import LayoutAuth from '../containers/LayoutAuth/LayoutAuth'
 import FormControl from '../containers/FormControl/FormControl'
 import {
@@ -19,21 +20,13 @@ import {
 export default function Login() {
   const dispatch = useDispatch()
   const [formValue, setFormValue] = useState({})
-  const [loading, setLoading] = useState(false)
+  const auth = useSelector((state) => state.auth)
   // const router = useRouter()
   const handleSubmit = async (event) => {
     if (event) event.preventDefault()
     // handling calling API
     console.log('handleSubmit', formValue)
-    setLoading(true)
-    const response = await fetch('http://127.0.0.1:5000/login.json')
-    const { user } = await response.json()
-    setLoading(false)
-    dispatch({
-      type: actionTypes.LOGIN,
-      logged: true,
-      user,
-    })
+    dispatch(LOGIN_ACTION())
     // if success
     // router.push('/')
   }
@@ -67,7 +60,7 @@ export default function Login() {
               />
             </FormControl>
             <FormControl>
-              <Button type="submit" widthAll>
+              <Button type="submit" widthAll loading={auth.loading}>
                 وارد شوید
               </Button>
             </FormControl>

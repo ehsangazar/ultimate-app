@@ -1,13 +1,24 @@
 import actionTypes from '../configs/actionTypes'
 
 const auth = (state = [], action) => {
-  console.log('action', action)
   switch (action.type) {
-    case actionTypes.LOGIN:
+    case actionTypes.LOGIN_STARTED:
       return {
         ...state,
-        user: action.user,
+        loading: action.loading,
         logged: action.logged,
+      }
+    case actionTypes.LOGIN_SUCCESS:
+      return {
+        ...state,
+        logged: action.logged,
+        loading: action.loading,
+        user: action.user,
+      }
+    case actionTypes.LOGIN_FAILED:
+      return {
+        ...state,
+        ...action,
       }
     default:
       return state

@@ -7,6 +7,7 @@ const Button = ({
   children,
   widthAll,
   buttonType = 'primary',
+  loading,
 }) => {
   const theme = useTheme()
   return (
@@ -36,7 +37,8 @@ const Button = ({
         `}
         type={type}
       >
-        {children}
+        {loading && 'loading'}
+        {!loading && children}
       </button>
     </div>
   )
