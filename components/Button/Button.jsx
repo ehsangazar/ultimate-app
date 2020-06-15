@@ -2,7 +2,12 @@
 import { css, jsx } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 
-const Button = ({ type = 'button', children }) => {
+const Button = ({
+  type = 'button',
+  children,
+  widthAll,
+  buttonType = 'primary',
+}) => {
   const theme = useTheme()
   return (
     <div
@@ -12,13 +17,13 @@ const Button = ({ type = 'button', children }) => {
     >
       <button
         css={css`
-          width: 100%;
-          background-color: ${theme.colors.primary};
+          width: ${widthAll ? '100%' : 'auto'};
+          background-color: ${theme.colors[buttonType]};
           color: white;
           font-size: ${theme.typography.paragraph};
           text-decoration: none;
-          padding: ${theme.spaces[4]};
-          border: ${theme.borderRadius[1]};
+          padding: 16px 24px;
+          border: ${theme.border[1]};
           border-radius: ${theme.borderRadius[1]};
           display: inline-block;
           position: relative;
@@ -26,6 +31,7 @@ const Button = ({ type = 'button', children }) => {
           transition-duration: 0.4s;
           &:hover {
             box-shadow: ${theme.boxShadow.light};
+            background-color: ${theme.colors.secondary};
           }
         `}
         type={type}

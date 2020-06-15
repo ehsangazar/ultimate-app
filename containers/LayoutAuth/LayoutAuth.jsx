@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import { Hyperlink } from '../../components'
 
 const LayoutAuth = ({ children }) => (
   <div
@@ -18,12 +19,20 @@ const LayoutAuth = ({ children }) => (
         text-align: center;
       `}
     >
-      <img
+      <Hyperlink
+        href="/"
         css={css`
-          max-width: 320px;
+          border: none;
         `}
-        src="logo.png"
-      />
+      >
+        <img
+          css={css`
+            max-width: 320px;
+            max-height: 300px;
+          `}
+          src="logo.png"
+        />
+      </Hyperlink>
     </div>
     <div
       css={css`

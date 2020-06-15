@@ -3,34 +3,29 @@ import { useState } from 'react'
 import { css, jsx } from '@emotion/core'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useDispatch } from 'react-redux'
-import actionTypes from '../configs/actionTypes'
 import LayoutAuth from '../containers/LayoutAuth/LayoutAuth'
 import FormControl from '../containers/FormControl/FormControl'
 import {
   InputEmail,
   InputPassword,
   Button,
-  Hyperlink,
   Space,
+  InputText,
+  Hyperlink,
   Paragraph,
 } from '../components'
 
-export default function Login() {
-  const dispatch = useDispatch()
+export default function Register() {
+  const router = useRouter()
   const [formValue, setFormValue] = useState({})
-  // const router = useRouter()
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
+
     // handling calling API
     console.log('handleSubmit', formValue)
-    dispatch({
-      type: actionTypes.LOGIN,
-      logged: true,
-      email: formValue.email,
-    })
+
     // if success
-    // router.push('/')
+    router.push('/')
   }
   const handleOnChange = (name, value) => {
     setFormValue({
@@ -42,13 +37,19 @@ export default function Login() {
   return (
     <div className="container">
       <Head>
-        <title>ورود</title>
+        <title>ثبت‌نام</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <LayoutAuth>
         <Space />
         <>
           <form onSubmit={handleSubmit}>
+            <FormControl>
+              <InputText
+                onChange={(value) => handleOnChange('name', value)}
+                placeholder="نام"
+              />
+            </FormControl>
             <FormControl>
               <InputEmail
                 onChange={(value) => handleOnChange('email', value)}
@@ -63,7 +64,7 @@ export default function Login() {
             </FormControl>
             <FormControl>
               <Button type="submit" widthAll>
-                وارد شوید
+                ثبت نام
               </Button>
             </FormControl>
             <div
@@ -74,7 +75,7 @@ export default function Login() {
               `}
             >
               <Paragraph>
-                <Hyperlink href="/register">ثبت نام کنید</Hyperlink>
+                <Hyperlink href="/login">وارد شوید</Hyperlink>
               </Paragraph>
               <Paragraph>
                 <Hyperlink href="/forgot">فراموشی کلمه عبور</Hyperlink>

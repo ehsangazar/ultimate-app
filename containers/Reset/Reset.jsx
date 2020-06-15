@@ -185,11 +185,14 @@ const Reset = () => (
         font-size: 16px;
         font-weight: 400;
         line-height: 1.65;
-        color: #333;
+        color: #222;
+        font-size: 100%;
       }
       * {
         font-family: Shabnam;
         box-sizing: border-box;
+        webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
     `}
   />

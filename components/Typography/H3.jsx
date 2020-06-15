@@ -2,22 +2,22 @@
 import { css, jsx } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 
-const H1 = ({ children, align = 'right', ...props }) => {
+const H3 = ({ children, align = 'right', ...props }) => {
   const theme = useTheme()
   return (
-    <h1
+    <h3
       css={css`
         text-align: ${align};
-        font-weight: ${theme.typography.h2.fontWeight};
-        line-height: ${theme.typography.h2.lineHeight};
+        font-weight: ${theme.typography.h3.fontWeight};
+        line-height: ${theme.typography.h3.lineHeight};
         margin-top: 0;
-        font-size: ${theme.typography.h2.fontSize}em;
+        font-size: ${theme.typography.h3.fontSize}em;
       `}
       {...props}
     >
       {children}
-    </h1>
+    </h3>
   )
 }
 
-export default H1
+export default H3

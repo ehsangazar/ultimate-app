@@ -1,31 +1,43 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import Head from 'next/head'
+import { useTheme } from 'emotion-theming'
+import LayoutPage from '../containers/LayoutPage/LayoutPage'
+import HomePageBanner from '../containers/HomePageBanner/HomePageBanner'
+import JobCardList from '../containers/JobCardList/JobCardList'
+import { H2 } from '../components'
 
 export default function Home() {
-  const color = 'white'
+  const theme = useTheme()
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>ریموت جابب - کار کردن از راه دور</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        Ultimate Project
+      <LayoutPage>
+        <HomePageBanner />
         <div
           css={css`
-            padding: 32px;
-            background-color: hotpink;
-            font-size: 24px;
-            border-radius: 4px;
-            &:hover {
-              color: ${color};
-            }
+            display: flex;
+            max-width: 1000px;
+            padding: 32px 0;
+            margin: 0 auto;
+            flex-direction: column;
           `}
         >
-          Hover to change color.
+          <H2
+            css={css`
+              padding-bottom: 32px;
+            `}
+          >
+            لیست جاب‌ها
+          </H2>
+          <div>
+            <JobCardList />
+          </div>
         </div>
-      </main>
+      </LayoutPage>
     </div>
   )
 }

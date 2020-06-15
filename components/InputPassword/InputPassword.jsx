@@ -2,14 +2,17 @@
 import { css, jsx } from '@emotion/core'
 import Input from '../Input/Input'
 
-const InputPassowrd = ({ placeholder }) => (
+const InputPassowrd = (props) => (
   <div
     css={css`
       width: 100%;
       direction: ltr;
+      input::placeholder {
+        direction: rtl;
+      }
     `}
   >
-    <Input type="password" placeholder={placeholder} />
+    <Input type="password" {...props} />
   </div>
 )
 

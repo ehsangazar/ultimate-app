@@ -2,13 +2,13 @@
 import { css, jsx } from '@emotion/core'
 import Input from '../Input/Input'
 
-const InputText = ({ placeholder }) => (
+const InputText = (props) => (
   <div
     css={css`
       width: 100%;
     `}
   >
-    <Input type="text" placeholder={placeholder} />
+    <Input type="text" {...props} />
   </div>
 )
 
