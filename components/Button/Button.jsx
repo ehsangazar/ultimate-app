@@ -6,6 +6,7 @@ const Button = ({
   type = 'button',
   children,
   widthAll,
+  onClick = () => {},
   disabled,
   buttonType = 'primary',
   loading,
@@ -40,6 +41,7 @@ const Button = ({
             cursor: no-drop;
           }
         `}
+        onClick={onClick}
         disabled={disabled || loading}
         type={type}
       >

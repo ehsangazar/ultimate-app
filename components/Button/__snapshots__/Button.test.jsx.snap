@@ -1,14 +1,127 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Render Correctly 1`] = `
+exports[`Button Renders Correctly 1`] = `
+.emotion-1 {
+  width: 100%;
+}
+
+.emotion-0 {
+  width: auto;
+  background-color: #2980b9;
+  color: white;
+  font-size: font-size:1px;
+  line-height: 1.6;
+  font-weight: 300;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 16px 24px;
+  border: 2px;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.emotion-0:hover {
+  box-shadow: 0 4px 16px rgba(0,1,31,0.2);
+  background-color: #f39c12;
+}
+
+.emotion-0:disabled {
+  background-color: #2c3e50;
+  cursor: no-drop;
+}
+
 <div
-  className="css-1chwg6y-Button"
+  className="emotion-1"
 >
   <button
-    className="css-rzf60u-Button"
+    className="emotion-0"
+    onClick={[Function]}
     type="button"
   >
     Sample Button
+  </button>
+</div>
+`;
+
+exports[`Button Shows Loading state 1`] = `
+.emotion-3 {
+  width: 100%;
+}
+
+.emotion-2 {
+  width: auto;
+  background-color: #2980b9;
+  color: white;
+  font-size: font-size:1px;
+  line-height: 1.6;
+  font-weight: 300;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 16px 24px;
+  border: 2px;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.emotion-2:hover {
+  box-shadow: 0 4px 16px rgba(0,1,31,0.2);
+  background-color: #f39c12;
+}
+
+.emotion-2:disabled {
+  background-color: #2c3e50;
+  cursor: no-drop;
+}
+
+.emotion-1 {
+  height: 21px;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-0 {
+  width: 40px;
+  position: absolute;
+}
+
+<div
+  className="emotion-3"
+>
+  <button
+    className="emotion-2"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="emotion-1"
+    >
+      <img
+        alt="loading"
+        className="emotion-0"
+        src="assets/img/loading.svg"
+      />
+    </div>
   </button>
 </div>
 `;
