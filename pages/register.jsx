@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { css, jsx } from '@emotion/core'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { useSelector, useDispatch } from 'react-redux'
 import LayoutAuth from '../containers/LayoutAuth/LayoutAuth'
 import FormControl from '../containers/FormControl/FormControl'
 import {
@@ -14,18 +15,23 @@ import {
   Hyperlink,
   Paragraph,
 } from '../components'
+import { REGISTER_ACTION } from '../actions'
 
 export default function Register() {
+  const dispatch = useDispatch()
   const router = useRouter()
   const [formValue, setFormValue] = useState({})
+  const auth = useSelector((state) => state.auth)
+
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
 
     // handling calling API
+    dispatch(REGISTER_ACTION())
     console.log('handleSubmit', formValue)
 
     // if success
-    router.push('/')
+    // router.push('/')
   }
   const handleOnChange = (name, value) => {
     setFormValue({
@@ -63,7 +69,7 @@ export default function Register() {
               />
             </FormControl>
             <FormControl>
-              <Button type="submit" widthAll>
+              <Button type="submit" widthAll loading={auth.loading}>
                 ثبت نام
               </Button>
             </FormControl>

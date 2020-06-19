@@ -1,33 +1,4 @@
-import actionTypes from '../configs/actionTypes'
+import { LOGIN_ACTION, REGISTER_ACTION } from './auth'
+import { JOBS_GET_ACTION } from './job'
 
-const LOGIN_ACTION = () => {
-  return async (dispatch) => {
-    dispatch({
-      type: actionTypes.LOGIN_STARTED,
-      loading: true,
-      logged: true,
-    })
-    try {
-      setTimeout(async () => {
-        const response = await fetch('http://127.0.0.1:5000/login.json')
-        const { user } = await response.json()
-        dispatch({
-          type: actionTypes.LOGIN_SUCCESS,
-          logged: true,
-          loading: false,
-          user,
-        })
-      }, 1000)
-    } catch (e) {
-      console.error('error', e)
-      dispatch({
-        type: actionTypes.LOGIN_FAILED,
-        logged: false,
-        loading: false,
-        error: true,
-      })
-    }
-  }
-}
-
-export { LOGIN_ACTION }
+export { LOGIN_ACTION, REGISTER_ACTION, JOBS_GET_ACTION }
