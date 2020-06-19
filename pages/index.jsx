@@ -6,8 +6,9 @@ import LayoutPage from '../containers/LayoutPage/LayoutPage'
 import HomePageBanner from '../containers/HomePageBanner/HomePageBanner'
 import JobCardList from '../containers/JobCardList/JobCardList'
 import { H2 } from '../components'
+import { GET_LIST_JOB_ACTION } from '../actions'
 
-export default function Home() {
+const Home = ({ jobs, loading }) => {
   const theme = useTheme()
   return (
     <div className="container">
@@ -34,10 +35,21 @@ export default function Home() {
             لیست جاب‌ها
           </H2>
           <div>
-            <JobCardList />
+            <JobCardList jobs={jobs} loading={loading} />
           </div>
         </div>
       </LayoutPage>
     </div>
   )
 }
+
+Home.getInitialProps = async ({ reduxStore }) => {
+  await reduxStore.dispatch(GET_LIST_JOB_ACTION())
+  const { job } = await reduxStore.getState()
+  return {
+    loading: job.loading,
+    jobs: job.jobs,
+  }
+}
+
+export default Home

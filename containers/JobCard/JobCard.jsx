@@ -3,7 +3,7 @@ import { css, jsx } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 import { Small, H5 } from '../../components'
 
-const JobCard = () => {
+const JobCard = ({ data }) => {
   const theme = useTheme()
   return (
     <div
@@ -29,9 +29,9 @@ const JobCard = () => {
       `}
     >
       <div>
-        <Small>شرکت ما</Small>
-        <H5>برنامه‌نویس Frontend</H5>
-        <Small>تمام‌وقت</Small>
+        <Small>{data.company}</Small>
+        <H5>{data.title}</H5>
+        <Small>{data.job_type}</Small>
       </div>
       <div
         className="inside"
@@ -45,7 +45,7 @@ const JobCard = () => {
           border-color: ${theme.borderColor.light};
         `}
       >
-        <Small>۱ اردیبهشت</Small>
+        <Small>{data.date}</Small>
       </div>
     </div>
   )
