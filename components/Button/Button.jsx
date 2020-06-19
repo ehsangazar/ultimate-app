@@ -6,6 +6,7 @@ const Button = ({
   type = 'button',
   children,
   widthAll,
+  disabled,
   buttonType = 'primary',
   loading,
 }) => {
@@ -34,10 +35,35 @@ const Button = ({
             box-shadow: ${theme.boxShadow.light};
             background-color: ${theme.colors.secondary};
           }
+          &:disabled {
+            background-color: ${theme.colors.backgroundColorSecondary};
+            cursor: no-drop;
+          }
         `}
+        disabled={disabled || loading}
         type={type}
       >
-        {loading && 'loading'}
+        {loading && (
+          <div
+            css={css`
+              height: 21px;
+              width: 100%;
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            `}
+          >
+            <img
+              alt="loading"
+              css={css`
+                width: 40px;
+                position: absolute;
+              `}
+              src="assets/img/loading.svg"
+            />
+          </div>
+        )}
         {!loading && children}
       </button>
     </div>
