@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typography H1 Renders Correctly 1`] = `
+.emotion-0 {
+  text-align: right;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-top: 0;
+  font-size: 1.802em;
+}
+
+<h1
+  className="emotion-0"
+>
+  Heading
+</h1>
+`;
+
+exports[`Typography H2 Renders Correctly 1`] = `
+.emotion-0 {
+  text-align: right;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-top: 0;
+  font-size: 1.602em;
+}
+
+<h1
+  className="emotion-0"
+>
+  Heading
+</h1>
+`;
+
+exports[`Typography H3 Renders Correctly 1`] = `
+.emotion-0 {
+  text-align: right;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-top: 0;
+  font-size: 1.424em;
+}
+
+<h3
+  className="emotion-0"
+>
+  Heading
+</h3>
+`;
+
+exports[`Typography H4 Renders Correctly 1`] = `
+.emotion-0 {
+  text-align: right;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-top: 0;
+  font-size: 1.266em;
+}
+
+<h4
+  className="emotion-0"
+>
+  Heading
+</h4>
+`;
+
+exports[`Typography H5 Renders Correctly 1`] = `
+.emotion-0 {
+  text-align: right;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-top: 0;
+  font-size: 1.125em;
+}
+
+<h5
+  className="emotion-0"
+>
+  Heading
+</h5>
+`;
+
+exports[`Typography Paragraph Renders Correctly 1`] = `
+.emotion-0 {
+  text-align: right;
+  margin-bottom: 0.7rem;
+  font-weight: 300;
+  line-height: 1.6;
+  font-size: 1em;
+}
+
+<p
+  className="emotion-0"
+>
+  Heading
+</p>
+`;
+
+exports[`Typography Small Renders Correctly 1`] = `
+.emotion-0 {
+  text-align: right;
+  font-weight: 100;
+  line-height: 1.6;
+  font-size: 0.889em;
+}
+
+<span
+  className="emotion-0"
+>
+  Heading
+</span>
+`;
+
+exports[`Typography Space Renders Correctly 1`] = `
+.emotion-0 {
+  width: 100%;
+  height: 1em;
+}
+
+<div
+  className="emotion-0"
+/>
+`;

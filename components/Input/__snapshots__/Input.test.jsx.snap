@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Renders Correctly 1`] = `
+.emotion-1 {
+  width: 100%;
+}
+
+.emotion-1 input::-webkit-input-placeholder {
+  direction: rtl;
+}
+
+.emotion-1 input::-moz-placeholder {
+  direction: rtl;
+}
+
+.emotion-1 input:-ms-input-placeholder {
+  direction: rtl;
+}
+
+.emotion-1 input::placeholder {
+  direction: rtl;
+}
+
+.emotion-0 {
+  width: 100%;
+  background-color: #ecf0f1;
+  font-size: font-size:1px;
+  line-height: 1.6;
+  font-weight: 300;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: 2px solid;
+  border-color: #bdc3c7;
+  padding: 16px;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+<div
+  className="emotion-1"
+>
+  <input
+    className="emotion-0"
+    onChange={[Function]}
+    placeholder="sample"
+    type="text"
+  />
+</div>
+`;

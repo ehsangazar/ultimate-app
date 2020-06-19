@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hyperlink Renders Correctly 1`] = `
+.emotion-0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  color: #2c3e50;
+  border-color: #2c3e50;
+  border-bottom: 2px solid;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.emotion-0:hover {
+  color: #f1c40f;
+  border-color: #f1c40f;
+}
+
+<a
+  className="emotion-0"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  Sample Hyperlink
+</a>
+`;
