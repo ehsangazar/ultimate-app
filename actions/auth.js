@@ -3,7 +3,7 @@ import reduxCall from '../utils/reduxCall'
 const LOGIN_ACTION = () => {
   return async (dispatch) => {
     return reduxCall(dispatch, {
-      url: 'http://127.0.0.1:5000/login.json',
+      url: '/login.json',
       method: 'GET',
       name: 'LOGIN',
     })
@@ -13,7 +13,7 @@ const LOGIN_ACTION = () => {
 const REGISTER_ACTION = () => {
   return async (dispatch) => {
     return reduxCall(dispatch, {
-      url: 'http://127.0.0.1:5000/register.json',
+      url: '/register.json',
       method: 'GET',
       name: 'REGISTER',
     })
