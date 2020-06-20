@@ -37,7 +37,6 @@ export default function Login() {
     })
   }
 
-  console.log('NEXT_PUBLIC_ABSOLUTE_URL', process.env.NEXT_PUBLIC_ABSOLUTE_URL)
   return (
     <div className="container">
       <Head>
