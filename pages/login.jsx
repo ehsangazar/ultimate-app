@@ -37,6 +37,7 @@ export default function Login() {
     })
   }
 
+  console.log('process', process.env)
   return (
     <div className="container">
       <Head>
