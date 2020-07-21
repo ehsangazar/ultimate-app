@@ -1,21 +1,23 @@
 import reduxCall from '../utils/reduxCall'
 
-const LOGIN_ACTION = () => {
+const LOGIN_ACTION = (formValue) => {
   return async (dispatch) => {
     return reduxCall(dispatch, {
-      url: '/login.json',
-      method: 'GET',
+      url: '/user/login',
+      method: 'POST',
       name: 'LOGIN',
+      body: formValue,
     })
   }
 }
 
-const REGISTER_ACTION = () => {
+const REGISTER_ACTION = (formValue) => {
   return async (dispatch) => {
     return reduxCall(dispatch, {
-      url: '/register.json',
-      method: 'GET',
+      url: '/user/register',
+      method: 'POST',
       name: 'REGISTER',
+      body: formValue,
     })
   }
 }

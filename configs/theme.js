@@ -5,6 +5,7 @@ const theme = {
     tertiary: '#e74c3c',
     linkPrimary: '#2c3e50',
     linkSecondary: '#f1c40f',
+    white: '#ffffff',
     backgroundColorDefault: '#ffffff',
     backgroundColorPrimary: '#ecf0f1',
     backgroundColorSecondary: '#2c3e50',

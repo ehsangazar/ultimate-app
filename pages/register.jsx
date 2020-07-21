@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { css, jsx } from '@emotion/core'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -10,6 +10,7 @@ import {
   InputEmail,
   InputPassword,
   Button,
+  Alert,
   Space,
   InputText,
   Hyperlink,
@@ -25,13 +26,7 @@ export default function Register() {
 
   const handleSubmit = (event) => {
     if (event) event.preventDefault()
-
-    // handling calling API
-    dispatch(REGISTER_ACTION())
-    console.log('handleSubmit', formValue)
-
-    // if success
-    // router.push('/')
+    dispatch(REGISTER_ACTION(formValue))
   }
   const handleOnChange = (name, value) => {
     setFormValue({
@@ -39,6 +34,16 @@ export default function Register() {
       [name]: value,
     })
   }
+
+  useEffect(() => {
+    if (
+      auth.response &&
+      auth.response.user &&
+      auth.response.user.access_token
+    ) {
+      router.push('/login')
+    }
+  }, [auth.response])
 
   return (
     <div className="container">
@@ -73,6 +78,8 @@ export default function Register() {
                 ثبت نام
               </Button>
             </FormControl>
+
+            {auth.response && <Alert>{auth.response.message}</Alert>}
             <div
               css={css`
                 display: flex;

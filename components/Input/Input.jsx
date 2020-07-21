@@ -32,6 +32,7 @@ const Input = ({ type = 'text', placeholder, onChange }) => {
           position: relative;
           cursor: pointer;
         `}
+        autoComplete="new-password"
         onChange={handleOnChange}
         type={type}
         placeholder={placeholder}
