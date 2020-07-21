@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import JobCard from '../JobCard/JobCard'
+import { Hyperlink } from '../../components'
 
 const JobCardList = ({ jobs, loading }) => {
   return (
@@ -29,7 +30,11 @@ const JobCardList = ({ jobs, loading }) => {
       )}
       {!loading &&
         jobs &&
-        jobs.map((item) => <JobCard key={`JobCard-${item.id}`} data={item} />)}
+        jobs.map((item) => (
+          <Hyperlink href={`/job/${item.id}`}>
+            <JobCard key={`JobCard-${item.id}`} data={item} />
+          </Hyperlink>
+        ))}
     </div>
   )
 }

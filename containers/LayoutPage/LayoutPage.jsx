@@ -34,10 +34,11 @@ const LayoutPage = ({ children }) => {
             `}
           >
             <img
+              alt="remote-jobb-logo"
               css={css`
                 max-width: 100px;
               `}
-              src="logo.png"
+              src="/logo.png"
             />
             <H3
               css={css`
