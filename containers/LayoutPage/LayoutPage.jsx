@@ -187,7 +187,7 @@ const LayoutPage = ({ children }) => {
                   css={css`
                     border: none;
                   `}
-                  href="/"
+                  href="/contact"
                 >
                   تماس
                 </Hyperlink>
