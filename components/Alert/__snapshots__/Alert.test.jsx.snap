@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Renders Correctly 1`] = `
+.emotion-0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border: none;
+  color: #2c3e50;
+  border-color: #2c3e50;
+  background-color: #e74c3c;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 16px;
+  padding-left: 16px;
+  color: #ffffff;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+<div
+  className="emotion-0"
+>
+   Alert
+</div>
+`;

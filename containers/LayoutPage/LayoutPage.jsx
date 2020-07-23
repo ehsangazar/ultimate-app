@@ -100,7 +100,7 @@ const LayoutPage = ({ children }) => {
                 </li>
               </ul>
             )}
-            {auth && auth.logged && <div>خوش آمدید</div>}
+            {auth && auth.logged && <div>خوش آمدید , {auth.user.email}</div>}
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { LOGIN_ACTION, REGISTER_ACTION } from './auth'
+import { LOGIN_ACTION, REGISTER_ACTION, VALIDATE_ME_ACTION } from './auth'
 import { GET_LIST_JOB_ACTION, GET_SINGLE_JOB_ACTION } from './job'
 
 export {
@@ -6,4 +6,5 @@ export {
   REGISTER_ACTION,
   GET_LIST_JOB_ACTION,
   GET_SINGLE_JOB_ACTION,
+  VALIDATE_ME_ACTION,
 }

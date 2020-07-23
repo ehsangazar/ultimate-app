@@ -86,6 +86,7 @@ exports[`InputEmail Renders Correctly 1`] = `
     className="emotion-1"
   >
     <input
+      autoComplete="new-password"
       className="emotion-0"
       onChange={[Function]}
       placeholder="sample"

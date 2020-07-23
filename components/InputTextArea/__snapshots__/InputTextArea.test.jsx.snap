@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input Renders Correctly 1`] = `
+exports[`InputTextArea Renders Correctly 1`] = `
 .emotion-1 {
   width: 100%;
 }
 
-.emotion-1 input::-webkit-input-placeholder {
+.emotion-1 textarea::-webkit-input-placeholder {
   direction: rtl;
 }
 
-.emotion-1 input::-moz-placeholder {
+.emotion-1 textarea::-moz-placeholder {
   direction: rtl;
 }
 
-.emotion-1 input:-ms-input-placeholder {
+.emotion-1 textarea:-ms-input-placeholder {
   direction: rtl;
 }
 
-.emotion-1 input::placeholder {
+.emotion-1 textarea::placeholder {
   direction: rtl;
 }
 
@@ -35,18 +35,18 @@ exports[`Input Renders Correctly 1`] = `
   border-radius: 4px;
   display: inline-block;
   position: relative;
+  min-height: 300px;
   cursor: pointer;
 }
 
 <div
   className="emotion-1"
 >
-  <input
+  <textarea
     autoComplete="new-password"
     className="emotion-0"
     onChange={[Function]}
     placeholder="sample"
-    type="text"
   />
 </div>
 `;

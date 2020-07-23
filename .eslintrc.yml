@@ -3,7 +3,7 @@ env:
   es6: true
   jest: true
 extends:
-  - "plugin:react/recommended"
+  - 'plugin:react/recommended'
   - airbnb
   - prettier
 globals:
@@ -17,4 +17,10 @@ parserOptions:
 plugins:
   - react
   - prettier
-rules: { react/jsx-props-no-spreading: 0 }
+rules:
+  {
+    react/jsx-props-no-spreading: 0,
+    no-param-reassign: 0,
+    react/prop-types: 0,
+    import/no-mutable-exports: 0,
+  }

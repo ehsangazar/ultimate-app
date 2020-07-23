@@ -31,8 +31,8 @@ const JobCardList = ({ jobs, loading }) => {
       {!loading &&
         jobs &&
         jobs.map((item) => (
-          <Hyperlink href={`/job/${item.id}`}>
-            <JobCard key={`JobCard-${item.id}`} data={item} />
+          <Hyperlink href={`/job/${item.id}`} key={`JobCard-${item.id}`}>
+            <JobCard data={item} />
           </Hyperlink>
         ))}
     </div>
