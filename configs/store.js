@@ -12,10 +12,10 @@ const createMyStore = () => {
   const cookies = new Cookies()
   let logged = false
   let email = ''
-  if (cookies.get('logged')) {
+  if (cookies.get('logged') === true) {
     logged = cookies.get('logged')
   }
-  if (cookies.get('email')) {
+  if (cookies.get('email') && cookies.get('email').length > 0) {
     email = cookies.get('email')
   }
   const store = createStore(

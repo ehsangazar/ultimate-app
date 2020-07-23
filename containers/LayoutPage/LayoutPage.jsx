@@ -1,12 +1,17 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { H3, Hyperlink, Button, Paragraph, Small } from '../../components'
+import { LOGOUT_ACTION } from '../../actions'
 
 const LayoutPage = ({ children }) => {
+  const dispatch = useDispatch()
   const auth = useSelector((state) => state.auth)
   const theme = useTheme()
+  const handleLogOut = () => {
+    dispatch(LOGOUT_ACTION())
+  }
   return (
     <div
       css={css`
@@ -100,7 +105,12 @@ const LayoutPage = ({ children }) => {
                 </li>
               </ul>
             )}
-            {auth && auth.logged && <div>خوش آمدید , {auth.user.email}</div>}
+            {auth && auth.logged && (
+              <div>
+                خوش آمدید , {auth.user.email}
+                <Button onClick={handleLogOut}>خروج</Button>
+              </div>
+            )}
           </div>
         </div>
       </div>

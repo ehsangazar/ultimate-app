@@ -4,7 +4,9 @@ const fetchUrl = async ({ url, method = 'GET', body }) => {
   const absoluteUrl = `${process.env.NEXT_PUBLIC_ABSOLUTE_URL}${url}`
   return new Promise((resolve) => {
     setTimeout(async () => {
-      const user = windowHandler.cookies.get('user')
+      const user = windowHandler.cookies
+        ? windowHandler.cookies.get('user')
+        : {}
       const params = {
         method,
         headers: {

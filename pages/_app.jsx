@@ -6,7 +6,7 @@ import Cookies from 'universal-cookie'
 import windowHandler from '../utils/windowHandler'
 import theme from '../configs/theme'
 import createMyStore from '../configs/store'
-import { VALIDATE_ME_ACTION } from '../actions'
+import { VALIDATE_ME_ACTION, LOGOUT_ACTION } from '../actions'
 
 const store = createMyStore()
 
@@ -41,6 +41,16 @@ MyApp.getInitialProps = async (appContext) => {
       const loggedCookie = `logged=${auth.logged}`
       appContext.ctx.res.setHeader('set-cookie', `${loggedCookie}`)
     }
+  } else {
+    if (appContext.ctx.res) {
+      const loggedCookie = `logged=false`
+      appContext.ctx.res.setHeader('set-cookie', `${loggedCookie}`)
+      const emailCookie = `email=`
+      appContext.ctx.res.setHeader('set-cookie', `${emailCookie}`)
+      const userCookie = `user=`
+      appContext.ctx.res.setHeader('set-cookie', `${userCookie}`)
+    }
+    await store.dispatch(LOGOUT_ACTION())
   }
   const pageProps = await App.getInitialProps(appContext)
   return {
